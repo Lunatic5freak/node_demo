@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script:wght@700&family=Rancho&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&family=Roboto+Condensed:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <style>
+      body {
+        background-color: black;
+        font-family: "Assistant", sans-serif;
+      }
+      #t1{
+        color: rgb(21, 224, 224);
+        font-size: x-large;
+      }
+      #t2{
+        display: flex;
+        margin-left: 40%;
+      }
+      #t3{
+        color: gray;
+        margin: 10px 5px 0 0;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 5px;
+        translate: 2px;
+      }
+      #t4{
+        height: 30px;
+        width: 30px;
+        margin: 10px 0 0 15px;
+        border: 2px solid rgb(21, 224, 224);
+        border-radius: 50%;
+      }
+      #t5{
+        height: 30px;
+        margin: 10px 0 0 15px;
+        border: 1px solid black;
+        border-radius: 10px;
+        outline: none;
+      }
+      .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+    </style>
+  </head>
+   <body>
+    <div class="container" style="display: flex;">
+        <div class="">
+            <p><span id="t1">HODLINFO</span><span style="color: white;">.com</span></p>
+            <p >
+              <span style="color: gray;">Powerd By</span> <span style="color: rgb(21, 224, 224);">Finstreet</span>
+            </p>
+        </div>
+        <div id="t2">
+          <button id="t3">INR <span>&#9662</span> </button>
+          <button id="t3">BTC <span>&#9662</span></button>
+        </div>
+        <div id="t4">
+          <p style="color:rgb(21, 224, 224); text-align: center;" >58</p>
+        </div>
+        <div>
+          <button id="t5" style="background-color:rgb(21, 224, 224); color: white;"><i class="fas fa-paper-plane" aria-hidden="true" style="color: white;"></i> Connect Telegram</button>
+        </div>
+        <div style="margin:10px 0 0 10px  ;">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr style="color: white;">
+                    <td>#</td>
+                    <td>name</td>
+                    <td>Last</td>
+                    <td>Buy/Sell Price</td>
+                    <td>volume</td>
+                    <td>base_unit</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=1;i<=10;i++){  %>
+                    <tr>
+                        <td style="color: white;"><%=i%></td>
+                        <td style="color: white;"><%=data[i-1].name%></td>
+                        <td style="color: white;"><%=data[i-1].last%></td>
+                        <td style="color: white;"><%=data[i-1].buy%>/<%=data[i-1].sell%></td>
+                        <td style="color: white;"><%=data[i-1].volume%></td>
+                        <td style="color: white;"><%=data[i-1].base_unit%></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+      </div>
+   </body>
+</html>
