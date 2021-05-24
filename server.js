@@ -11,7 +11,7 @@ app.set('view engine','ejs')
 app.engine("ejs",ejs);
 
 app.get('/',async (req,res)=>{
-    const response=await axios.get('https://api.wazirx.com/api/v2/tickers/?limit=10');
+    const response=await axios.get('https://api.wazirx.com/api/v2/tickers');
     const data=Object.keys(response.data).map(i=>response.data[i]);
     res.render('home',{data:data})
 })
